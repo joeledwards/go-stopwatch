@@ -85,11 +85,15 @@ func (watch *Stopwatch) String() string {
   return fmt.Sprintf("Stopwatch[%s : %s]", state, watch.Format())
 }
 
-func NewStopwatch() Stopwatch {
-  return new(Stopwatch{false, 0, time.Now()})
+func NewStopwatch() *Stopwatch {
+  var watch *Stopwatch = new(Stopwatch)
+
+  return watch
 }
 
 func MakeStopwatch() Stopwatch {
-  return Stopwatch{false, 0, time.Now()}
+  var watch Stopwatch = Stopwatch{false, 0, time.Now()}
+
+  return watch
 }
 
