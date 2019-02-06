@@ -63,9 +63,9 @@ func (watch *Stopwatch) Format() string {
 
   switch {
     case hours > 0:
-      return fmt.Sprintf("%d h, %d min", hours, minutes)
+      return fmt.Sprintf("%d h, %d min", hours, minutes % 60)
     case minutes > 0:
-      return fmt.Sprintf("%d min, %d s", minutes, seconds)
+      return fmt.Sprintf("%d min, %d s", minutes, seconds % 60)
     case seconds > 0:
       return fmt.Sprintf("%d.%03d s", seconds, millis % 1000)
     case millis > 0:
